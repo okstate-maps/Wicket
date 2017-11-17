@@ -192,7 +192,7 @@ var app = (function () {
             leaflet.map.on('load', function () {
                 if (!this.loaded) {
                     this.loaded = true;
-                    document.getElementById('wkt').value = 'MULTIPOLYGON (((40 40, 20 45, 45 30, 40 40)), ((20 35, 10 30, 10 10, 30 5, 45 20, 20 35), (30 20, 20 15, 20 25, 30 20)))';
+                    document.getElementById('wkt').value = unescape(document.location.search.split("=")[1]);
                 }
             });
 
@@ -212,7 +212,7 @@ var app = (function () {
 
 }());
 </script>
-<body onload="app.map=app.init();app.mapIt(true, false);">
+<body onload="app.map=app.init();app.mapIt(true, true);">
     <div id="head">
         <div class="wrapper">
         </div>
